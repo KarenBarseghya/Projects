@@ -14,6 +14,7 @@ public:
     Vector(size_t , bool);
     bool empty();
     void push_back(bool val);
+    void pop_back();
     ~Vector();
 
 class reference
@@ -208,6 +209,11 @@ void Vector::push_back(bool val)
         ptr = nullptr;
     }
     (*this)[Size++] = val;
+}
+
+void Vector::pop_back()
+{
+    (*this)[Size--] = false;
 }
 
 Vector::~Vector()
