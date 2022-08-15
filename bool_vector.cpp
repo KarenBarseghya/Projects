@@ -15,6 +15,8 @@ public:
     bool empty();
     void push_back(bool val);
     void pop_back();
+    int size();
+    int capacity();
     ~Vector();
 
 class reference
@@ -214,6 +216,16 @@ void Vector::push_back(bool val)
 void Vector::pop_back()
 {
     (*this)[Size--] = false;
+}
+
+int Vector::size()
+{
+    return Size;
+}
+
+int Vector::capacity()
+{
+    return m_cap;
 }
 
 Vector::~Vector()
