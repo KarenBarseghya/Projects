@@ -130,7 +130,7 @@ void board_printer()
     std::cout << "-----------------------------------------------------------------------" << std::endl;
 }
 
-void checker(std::string figure , std::string next_place)
+void checker(std::string figure, std::string next_place)
 {
     if(next_place[2] != '\0' || next_place[1] == '0' || next_place[1] == '9')
     {
@@ -172,7 +172,7 @@ void checker(std::string figure , std::string next_place)
             {
                 if(figure[0] == next_place[0])
                 {
-                    for(int i = tester + 1 ; i <= second_tester ; ++i)
+                    for(int i = tester + 1; i <= second_tester; ++i)
                     {
                         std::string b = std::to_string(i);
                         if(board[figure[0] + b] != "      ")
@@ -193,7 +193,7 @@ void checker(std::string figure , std::string next_place)
                     {
                         char sym = figure[0];
                         int i = 1;
-                        for(char i = figure[0] ; i != next_place[0] + 1 ; ++i)
+                        for(char i = figure[0]; i != next_place[0] + 1; ++i)
                         {
                             std::cout << board[figure];
                             if(board[figure] != "      " && figure[0] != sym)
@@ -208,7 +208,7 @@ void checker(std::string figure , std::string next_place)
             }
             else if(word == "Bcast")
             {
-                for(int i = tester - 1 ; i >= second_tester ; --i)
+                for(int i = tester - 1; i >= second_tester; --i)
                 {
                     std::string b = std::to_string(i);
                     if(i == second_tester  && board[figure[0] + b][0] == 'W')
@@ -316,7 +316,7 @@ void checker(std::string figure , std::string next_place)
         {
             int tester = (int)figure[1] - 48;
             int second_tester = (int)next_place[1] - 48;
-            for(int i = tester + 1 ; i < second_tester ; ++i)
+            for(int i = tester + 1; i < second_tester; ++i)
             {
                 std::string b = std::to_string(i);
                 if(board[figure[0] + b] != "      ")
