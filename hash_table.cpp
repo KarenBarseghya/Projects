@@ -40,7 +40,7 @@ void Hashtable::remove(int key)
 {
     int x = getHash(key);
     auto it = table[x].begin();
-    for(;it != table[x].end() ; ++it)
+    for(; it != table[x].end(); ++it)
     {
         if(*it == key)
         {
@@ -53,7 +53,7 @@ void Hashtable::remove(int key)
 
 void Hashtable::print()
 {
-    for(int i = 0 ; i < m_size ; ++i)
+    for(int i = 0; i < m_size; ++i)
     {
         for(int j : table[i])
         {
