@@ -26,7 +26,7 @@ std::vector<Contact>Data;
 
 int main()
 {
-    collector();
+   collector();
    interface();
    put_on_txt();
 }
@@ -78,14 +78,14 @@ void collector()
     {
         count = stoi(str);
     }
-    std::getline(fin , str);
-    for(int k = 0 ; k < count ; ++k)
+    std::getline(fin, str);
+    for(int k = 0; k < count; ++k)
     {
-    for(int i = 0 ; i < size ; ++i)
+    for(int i = 0; i < size; ++i)
     {
-        std::getline(fin , str);
+        std::getline(fin, str);
         std::string str2;
-        for(int h = 0 ; str[h] != ';' ; ++h)
+        for(int h = 0; str[h] != ';'; ++h)
         {
           str2 += str[h];
         }
@@ -122,7 +122,7 @@ void collector()
             data.Email = str2;
         }
     }
-    std::getline(fin , str);
+    std::getline(fin, str);
     Data.push_back(data);
     }
     fin.clear();
@@ -153,7 +153,7 @@ void Add_contact_list()
     data.Name = name ;
     data.Surname = surname;
     data.Date_of_birth = date_of_birth;
-    for(int i = 0 ; i < Data.size() ; ++i)
+    for(int i = 0; i < Data.size(); ++i)
     {
         if(Data[i].ID == id)
         {
@@ -165,7 +165,7 @@ void Add_contact_list()
         }
         data.ID = id;
     }
-    for(int i = 0 ; i < Data.size() ; ++i)
+    for(int i = 0; i < Data.size(); ++i)
     {
         if(Data[i].PhoneNumber == Phonenumber)
         {
@@ -179,7 +179,7 @@ void Add_contact_list()
         data.PhoneNumber = Phonenumber;
     }
 
-    for(int i = 0 ; i < Data.size() ; ++i)
+    for(int i = 0; i < Data.size(); ++i)
     {
         if(data.Email == email)
         {
@@ -198,7 +198,7 @@ void Add_contact_list()
 
 void List_all_contacts()
 {
-    for(int i = 0 ; i < Data.size() ; ++i)
+    for(int i = 0; i < Data.size(); ++i)
     {
         std::cout << "Name : " << Data[i].Name << "  ";
         std::cout << "Surname : " << Data[i].Surname << "  ";
@@ -214,12 +214,12 @@ void Search_for_contact()
     std::string word;
     std::cout << "Pease enter data for searching : ";
     std::cin >> word;
-    for(int i = 0 ; i < Data.size() ; ++i)
+    for(int i = 0; i < Data.size(); ++i)
     {
         if(word == Data[i].Name || word == Data[i].Surname || word == Data[i].Date_of_birth
           || word == Data[i].ID || word == Data[i].PhoneNumber || word == Data[i].Email)
         {
-            for(int i = 0 ; i < Data.size() ; ++i)
+            for(int i = 0; i < Data.size(); ++i)
             {
                 std::cout << "Name : " << Data[i].Name << "  ";
                 std::cout << "Surname : " << Data[i].Surname << "  ";
@@ -240,7 +240,7 @@ void Edit_contact()
     {
         std::cout << "Pease enter data for searching : ";    
         std::cin >> word;
-        for(int i = 0 ; i < Data.size() ; ++i)
+        for(int i = 0; i < Data.size(); ++i)
         {
             if(word == Data[i].Name || word == Data[i].Surname || word == Data[i].Date_of_birth
             || word == Data[i].ID || word == Data[i].PhoneNumber || word == Data[i].Email)
@@ -250,7 +250,7 @@ void Edit_contact()
         }
     }while(count != 1);
     
-     for(int i = 0 ; i < Data.size() ; ++i)
+     for(int i = 0; i < Data.size(); ++i)
      {
         if(word == Data[i].Name || word == Data[i].Surname || word == Data[i].Date_of_birth
         || word == Data[i].ID || word == Data[i].PhoneNumber || word == Data[i].Email)
@@ -267,7 +267,7 @@ void Edit_contact()
                 if(word == Data[i].Name || word == Data[i].Surname || word == Data[i].Date_of_birth
                 || word == Data[i].ID || word == Data[i].PhoneNumber || word == Data[i].Email)
                 {
-                    test = true;;
+                    test = true;
                 }
             }while(test);
 
@@ -296,7 +296,7 @@ void Delete_contact()
     {
         std::cout << "Pease enter data for searching : ";    
         std::cin >> word;
-        for(int i = 0 ; i < Data.size() ; ++i)
+        for(int i = 0; i < Data.size(); ++i)
         {
             if(word == Data[i].Name || word == Data[i].Surname || word == Data[i].Date_of_birth
             || word == Data[i].ID || word == Data[i].PhoneNumber || word == Data[i].Email)
@@ -306,7 +306,7 @@ void Delete_contact()
         }
     }while(count != 1);
     
-    for(int i = 0 ; i < Data.size() ; ++i)
+    for(int i = 0; i < Data.size(); ++i)
      {
         if(word == Data[i].Name || word == Data[i].Surname || word == Data[i].Date_of_birth
         || word == Data[i].ID || word == Data[i].PhoneNumber || word == Data[i].Email)
