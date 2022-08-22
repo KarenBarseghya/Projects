@@ -1,13 +1,13 @@
 #include <iostream>
 
-std::string Hidder(std::string message);
-std::string Decoder(std::string message);
+std::string Hidder(const& std::string message);
+std::string Decoder(const& std::string message);
 
 class cesar
 {
     std::string hidden_message;
 public :
-    void set_hidden_word(std::string message);
+    void set_hidden_word(const& std::string message);
 };
 int main()
 {
@@ -32,7 +32,7 @@ int main()
 
 }
 
-std::string Hidder(std::string message)
+std::string Hidder(const& std::string message)
 {
     int formation{};
     std::cout << "Please enter your formation count : ";
@@ -69,7 +69,7 @@ std::string Hidder(std::string message)
     return message;
 }
 
-std::string Decoder(std::string message)
+std::string Decoder(const& std::string message)
 {
     int formation{};
     std::cout << "Please enter the formation : ";
