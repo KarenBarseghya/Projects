@@ -19,8 +19,7 @@ int main()
     {
         std::cout << "If you want hide the hidden work please enter 1 , else please enter 2 : ";
         std::cin >> choose;
-    }
-    while(choose != 1 && choose != 2);
+    }while(choose != 1 && choose != 2);
 
     if(choose == 1)
     {
@@ -38,11 +37,11 @@ std::string Hidder(std::string message)
     int formation{};
     std::cout << "Please enter your formation count : ";
     std::cin >> formation;
-    for(int i = 0 ; i < message.size() ; ++i)
+    for(int i = 0; i < message.size(); ++i)
     {
         if(message[i] >= 'a' && message[i] <= 'z')
         {
-            if(message[i] - formation <'a')
+            if(message[i] - formation < 'a')
             {
                 int count = message[i] - 'a' - 1;
                 message[i] = 'z' - (formation + count);
@@ -75,7 +74,7 @@ std::string Decoder(std::string message)
     int formation{};
     std::cout << "Please enter the formation : ";
     std::cin >> formation; 
-    for(int i = 0 ; i < message.size() ; ++i)
+    for(int i = 0; i < message.size(); ++i)
     {
         if(message[i] >= 'a' && message[i] <= 'z')
         {
