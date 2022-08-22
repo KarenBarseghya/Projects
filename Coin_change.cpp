@@ -4,7 +4,7 @@ std::vector<int>vp{10,20,50,100,200,500};
 
 int coinChange(std::vector<int>& coins, int amount) 
 {
-        std::sort(coins.begin() , coins.end());
+        std::sort(coins.begin(), coins.end());
         if(!amount)
         {
             return 0;
@@ -14,7 +14,7 @@ int coinChange(std::vector<int>& coins, int amount)
             return -1;
         }
         int count = 0;
-        for(int i = coins.size() - 1 ; i >= 0 ; --i)
+        for(int i = coins.size() - 1; i >= 0; --i)
         {
             int div = amount / coins[i];
             count += div;
@@ -33,5 +33,5 @@ int coinChange(std::vector<int>& coins, int amount)
 
     int main()
     {
-        std::cout << coinChange(vp , 1365);
+       
     }
