@@ -3,12 +3,12 @@
 
 const int Size = 4;
 
-std::vector<std::vector<int>>vec(Size ,{0});
+std::vector<std::vector<int>>vec(Size, {0});
  
 
-bool is_safe(std::vector<std::vector<int>>& vec , int row , int col)
+bool is_safe(std::vector<std::vector<int>>& vec, int row, int col)
 { 
-    for(int i = 0 ; i < Size ; ++i)
+    for(int i = 0; i < Size; ++i)
     {
         if(vec[row][i])
         {
@@ -16,7 +16,7 @@ bool is_safe(std::vector<std::vector<int>>& vec , int row , int col)
         }
     }
 
-    for(int i = row , j = col ; i >= 0 && j >= 0 ; i-- , j-- )
+    for(int i = row, j = col; i >= 0 && j >= 0; i--, j--)
     {
         if(vec[i][j])
         {
@@ -24,7 +24,7 @@ bool is_safe(std::vector<std::vector<int>>& vec , int row , int col)
         }
     }
 
-    for(int i = row , j = col ; i < vec.size() && j >= 0 ; ++i, --j)
+    for(int i = row, j = col; i < vec.size() && j >= 0; ++i, --j)
     {
         if(vec[i][j])
         {
@@ -40,12 +40,12 @@ bool setQ(std::vector<std::vector<int>>& vec, int col)
     {
         return true;
     }
-    for(int i = 0 ; i < Size ; ++i)
+    for(int i = 0; i < Size; ++i)
     {
-        if(is_safe(vec , i, col))
+        if(is_safe(vec, i, col))
         {
             vec[i][col] = 1;
-            if(setQ(vec , col + 1))
+            if(setQ(vec, col + 1))
             {
                 return true;
             }
@@ -57,14 +57,14 @@ bool setQ(std::vector<std::vector<int>>& vec, int col)
 
 bool solve()
 {
-    if(setQ(vec , 0) == false)
+    if(setQ(vec, 0) == false)
     {
         return false;
     }
     
-    for(int i = 0 ; i < Size ; ++i)
+    for(int i = 0; i < Size; ++i)
     {
-        for(int j = 0 ; j < Size ; ++j)
+        for(int j = 0; j < Size; ++j)
         {
             std::cout << vec[i][j];
         }
