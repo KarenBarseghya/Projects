@@ -6,7 +6,7 @@ std::string Decoder(const& std::string message);
 class cesar
 {
     std::string hidden_message;
-public :
+public:
     void set_hidden_word(const& std::string message);
 };
 int main()
