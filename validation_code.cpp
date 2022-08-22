@@ -18,7 +18,7 @@ bool Validation::is_valid_mail(std::string mail)
                             "@internet.ru", "gmail.com" , 
                             "@list.ru" , "@yahoo.com" };
     std::string word{};
-    for(int i = 0 ; i < mail.length() ; ++i)
+    for(int i = 0; i < mail.length(); ++i)
     {
         if(mail[i] == '@')
         {
@@ -33,7 +33,7 @@ bool Validation::is_valid_mail(std::string mail)
             }
         }
     }
-    for(int i = 0 ; i < idCount ; ++i)
+    for(int i = 0; i < idCount; ++i)
     {
         if(word == mailIds[i])
         {
@@ -48,7 +48,7 @@ bool Validation::is_valid_reference(std::string reference)
     std::string word{};
     const int Protocolcount = 2;
     std::string Protocol[Protocolcount] = {"http://" , "https://"};
-    for(int i = 0 ; i < Protocol[Protocolcount - 1].size() ; ++i)
+    for(int i = 0; i < Protocol[Protocolcount - 1].size(); ++i)
     {
         word.push_back(reference[i]);
         if(word == Protocol[Protocolcount - 2] || word == Protocol[Protocolcount-1])
@@ -61,7 +61,7 @@ bool Validation::is_valid_reference(std::string reference)
 
 bool Validation::is_valid_month_day(std::string month_day)
 {
-    for(int i = 0 ; i < month_day.size() ; ++i)
+    for(int i = 0; i < month_day.size(); ++i)
     {
         if(month_day[i] <= '0' && month_day[i] >= '9')
         {
@@ -89,12 +89,12 @@ bool Validation::is_valid_phone_number(std::string phone_number)
                                                 "043" , "044"};
     if(phone_number[0] == '+')
     {
-        for(int i = 0 ; i < validPhonenumber[0].length() ; ++i)
+        for(int i = 0; i < validPhonenumber[0].length(); ++i)
         {
             word.push_back(phone_number[i]);
         }
 
-        for(int i = 0 ; i < validPhonenumbercount ; ++i)
+        for(int i = 0; i < validPhonenumbercount; ++i)
         {
             if(word == validPhonenumber[i])
             {
@@ -105,12 +105,12 @@ bool Validation::is_valid_phone_number(std::string phone_number)
     }
     else if(phone_number[0] == '0')
     {
-        for(int i = 0 ; i < validPhonenumberwithout374[0].length() ; ++i)
+        for(int i = 0; i < validPhonenumberwithout374[0].length(); ++i)
         {
             word.push_back(phone_number[i]);
         }
 
-        for(int i = 0 ; i < validPhonenumbercount ; ++i)
+        for(int i = 0; i < validPhonenumbercount; ++i)
         {
             if(word == validPhonenumber[i])
             {
@@ -137,7 +137,7 @@ bool Validation::is_valid_credit_card(std::string card_number)
 {
     if(card_number.length() == 16 || card_number.length() == 13)
     {
-        for(int i = 0 ; i < card_number.length() ; ++i)
+        for(int i = 0; i < card_number.length(); ++i)
         {
             if(card_number[i] < '0' || card_number[i] > '9')
             {
