@@ -321,7 +321,7 @@ void put_on_txt()
     std::ofstream fin;
     fin.open("text.txt");
    fin << Data.size() << std::endl;
-   for(int i = 0 ; i < Data.size() ; ++i)
+   for(int i = 0; i < Data.size(); ++i)
    {
        fin << "-----contact-----;" << std::endl;
        fin << Data[i].Name << ';' << "name;"  << std::endl;
