@@ -1,14 +1,14 @@
 #include <iostream>
 #include <vector>
 
+const int Size = 4;
 
-
-std::vector<std::vector<int>>vec(4 ,{0});
+std::vector<std::vector<int>>vec(Size ,{0});
  
 
 bool is_safe(std::vector<std::vector<int>>& vec , int row , int col)
 { 
-    for(int i = 0 ; i < 4 ; ++i)
+    for(int i = 0 ; i < Size ; ++i)
     {
         if(vec[row][i])
         {
@@ -36,11 +36,11 @@ bool is_safe(std::vector<std::vector<int>>& vec , int row , int col)
 
 bool setQ(std::vector<std::vector<int>>& vec, int col)
 {
-    if(col >= 4)
+    if(col >= Size)
     {
         return true;
     }
-    for(int i = 0 ; i < 4 ; ++i)
+    for(int i = 0 ; i < Size ; ++i)
     {
         if(is_safe(vec , i, col))
         {
@@ -62,9 +62,9 @@ bool solve()
         return false;
     }
     
-    for(int i = 0 ; i < 4 ; ++i)
+    for(int i = 0 ; i < Size ; ++i)
     {
-        for(int j = 0 ; j < 4 ; ++j)
+        for(int j = 0 ; j < Size ; ++j)
         {
             std::cout << vec[i][j];
         }
